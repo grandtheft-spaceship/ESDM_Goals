@@ -6,4 +6,5 @@ class Kid < ApplicationRecord
   validates_presence_of :guardian_id
 
   belongs_to :guardian
+  has_one :case
 end
