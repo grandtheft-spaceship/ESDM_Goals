@@ -4,4 +4,5 @@ class Case < ApplicationRecord
   belongs_to :therapist
   belongs_to :teacher
   has_many :daily_reports
+  has_many :goals
 end
