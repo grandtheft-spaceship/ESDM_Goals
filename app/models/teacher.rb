@@ -1,3 +1,3 @@
-class Teacher < ApplicationRecord
+class Teacher < User
   has_many :cases
 end
