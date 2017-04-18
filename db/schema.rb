@@ -16,25 +16,22 @@ ActiveRecord::Schema.define(version: 20170418101908) do
   enable_extension "plpgsql"
 
   create_table "cases", force: :cascade do |t|
-    t.integer  "guardian_id"
-    t.integer  "kid_id"
-    t.integer  "therapist_id"
-    t.integer  "teacher_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "guardian_id",  default: 0
+    t.integer  "kid_id",       default: 0
+    t.integer  "therapist_id", default: 0
+    t.integer  "teacher_id",   default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "daily_reports", force: :cascade do |t|
-    t.integer  "guardian_id",  null: false
-    t.integer  "case_id",      null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "guardian_id",  default: 0
+    t.integer  "case_id",      default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.text     "body"
-    t.integer  "therapist_id"
-    t.integer  "teacher_id"
-    t.index ["body"], name: "index_daily_reports_on_body", using: :btree
-    t.index ["teacher_id"], name: "index_daily_reports_on_teacher_id", using: :btree
-    t.index ["therapist_id"], name: "index_daily_reports_on_therapist_id", using: :btree
+    t.integer  "therapist_id", default: 0
+    t.integer  "teacher_id",   default: 0
   end
 
   create_table "goals", force: :cascade do |t|
