@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418101908) do
+ActiveRecord::Schema.define(version: 20170419021451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,25 @@ ActiveRecord::Schema.define(version: 20170418101908) do
     t.integer  "guardian_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "body"
+    t.string   "category"
+    t.integer  "level_number"
+    t.string   "parent_report",    default: ""
+    t.string   "therapist_report", default: ""
+    t.string   "teacher_report",   default: ""
+    t.integer  "survey_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "case_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
