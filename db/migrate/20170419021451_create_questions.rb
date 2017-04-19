@@ -8,7 +8,7 @@ class CreateQuestions < ActiveRecord::Migration[5.0]
       t.string :therapist_report, default: ""
       t.string :teacher_report, default: ""
       t.integer :survey_id
-      
+
       t.timestamps
     end
   end

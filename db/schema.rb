@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419021451) do
+ActiveRecord::Schema.define(version: 20170419101910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170419021451) do
     t.string   "body"
     t.string   "category"
     t.integer  "level_number"
-    t.string   "parent_report",    default: ""
+    t.string   "guardian_report",  default: ""
     t.string   "therapist_report", default: ""
     t.string   "teacher_report",   default: ""
     t.integer  "survey_id"
