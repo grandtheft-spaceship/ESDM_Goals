@@ -5,4 +5,5 @@ class Case < ApplicationRecord
   belongs_to :teacher, optional: true
   has_many :daily_reports
   has_many :goals
+  has_many :surveys
 end
