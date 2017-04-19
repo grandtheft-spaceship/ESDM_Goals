@@ -16,22 +16,22 @@ ActiveRecord::Schema.define(version: 20170419101910) do
   enable_extension "plpgsql"
 
   create_table "cases", force: :cascade do |t|
-    t.integer  "guardian_id",  default: 0
-    t.integer  "kid_id",       default: 0
-    t.integer  "therapist_id", default: 0
-    t.integer  "teacher_id",   default: 0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "guardian_id"
+    t.integer  "kid_id"
+    t.integer  "therapist_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "daily_reports", force: :cascade do |t|
-    t.integer  "guardian_id",  default: 0
-    t.integer  "case_id",      default: 0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "guardian_id"
+    t.integer  "case_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.text     "body"
-    t.integer  "therapist_id", default: 0
-    t.integer  "teacher_id",   default: 0
+    t.integer  "therapist_id"
+    t.integer  "teacher_id"
   end
 
   create_table "goals", force: :cascade do |t|
