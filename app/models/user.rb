@@ -11,4 +11,5 @@ class User < ApplicationRecord
   validates_uniqueness_of :email, message: 'Email Has Already Being Used'
   validates_presence_of :role
   enum role: [:guardian, :therapist, :teacher]
+
 end
