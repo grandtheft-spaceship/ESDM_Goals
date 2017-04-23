@@ -12,4 +12,8 @@ class User < ApplicationRecord
   validates_presence_of :role
   enum role: [:guardian, :therapist, :teacher]
 
+  def full_name
+    self.first_name + " " + self.last_name
+  end
+
 end

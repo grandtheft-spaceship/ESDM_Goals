@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Profile</title>
+  </head>
+  <body>
+    <h1><%= @user.full_name %></h1>
+    <ul>
+      <li><%= @user.role.capitalize %></li>
+      <li><%= @user.position ? @user.position : nill %></li>
+      <li><%= @user.email %></li>
+    </ul>
+  </body>
+</html>
