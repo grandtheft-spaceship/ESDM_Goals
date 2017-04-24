@@ -16,4 +16,16 @@ class User < ApplicationRecord
     self.first_name + " " + self.last_name
   end
 
+  def is_guardian?
+    self.role == "guardian"
+  end
+
+  def is_therapist?
+    self.role == "therapist"
+  end
+
+  def is_teacher?
+    self.role == "teacher"
+  end
+
 end
