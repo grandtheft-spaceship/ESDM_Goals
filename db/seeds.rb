@@ -28,8 +28,8 @@ end
 therapist_positions = ["Pathologist", "Occupational Therapist"]
 teacher_positions = ["Phase 1", "Phase 2", "Phase 3", "Pre-K Teacher"]
 
-therapists = User.where(role: "therapist")
-teachers = User.where(role: "teacher")
+therapists = Therapist.where(role: "therapist")
+teachers = Teacher.where(role: "teacher")
 
 therapists.map { |therapist| therapist.position = therapist_positions[rand(0..1)]}
 
@@ -41,4 +41,14 @@ teachers.map { |teacher| teacher.position = teacher_positions[rand(0..3)]}
 
 teachers.each do |teacher|
   teacher.save
+end
+
+guardians = Guardian.where(role: "guardian")
+
+diagnosis = [true, false]
+
+guardians.each do |guardian|
+  kid = guardian.kids.create!(first_name: Faker::Name.first_name, last_name: guardian.last_name, birthdate: Faker::Date.birthday(2, 6), has_diagnosis: true, guardian_id: guardian.id)
+
+  guardian.cases.create!(kid_id: kid.id, therapist_id: therapists[rand(0..(therapists.length - 1))].id, teacher_id: teachers[rand(0..(teachers.length - 1))].id)
 end
