@@ -12,7 +12,7 @@
       <li><%= @user.email %></li>
     </ul>
 
-      <% if @user.is_guardian? %>
+      <% if @user.has_kids? %>
       <h3>Kids</h3>
         <% @user.kids.each do |kid| %>
           <%= kid.first_name %>

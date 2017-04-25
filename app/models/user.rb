@@ -28,4 +28,7 @@ class User < ApplicationRecord
     self.role == "teacher"
   end
 
+  def has_kids?
+    self.kids
+  end
 end
