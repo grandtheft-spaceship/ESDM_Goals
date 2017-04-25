@@ -8,5 +8,6 @@ class Kid < ApplicationRecord
   belongs_to :guardian
   has_one :case
   has_many :therapists, :through => :case
+  has_many :teachers, :through => :case
   has_many :goals, :through => :case
 end
