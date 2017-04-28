@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Guardian Profile</title>
+  </head>
+  <body>
+    <h1><%= @guardian.full_name %></h1>
+    <ul>
+      <li><%= @guardian.role.capitalize %></li>
+      <li><%= @guardian.position ? @guardian.position : nill %></li>
+      <li><%= @guardian.email %></li>
+    </ul>
+
+      <% if @guardian.has_kids? %>
+      <h3>Kids</h3>
+        <% @guardian.kids.each do |kid| %>
+          <%= kid.first_name %>
+        <% end %>
+      <% end %>
+
+      <%= link_to 'Edit Profile', edit_guardian_path(@guardian) %>
+
+  </body>
+</html>
