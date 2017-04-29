@@ -1,0 +1,2 @@
+module GuardiansKidsHelper
+end

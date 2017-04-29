@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:show]
 
-  resources :guardians
+  resources :guardians do
+    resources :kids
+  end
+
     # root "controller#view"
   # devise_scope :user do
   #   root to: "devise/sessions#new"
