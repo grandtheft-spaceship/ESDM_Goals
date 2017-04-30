@@ -15,7 +15,7 @@
       <% if @guardian.has_kids? %>
       <h3><%= link_to "Kids", guardian_kids_path(@guardian) %></h3>
         <% @guardian.kids.each do |kid| %>
-          <%= link_to "#{kid.first_name}", guardian_kid_path(kid) %>
+          <%= link_to "#{kid.first_name}", guardian_kid_path(@guardian, kid) %>
         <% end %>
       <% end %>
 
