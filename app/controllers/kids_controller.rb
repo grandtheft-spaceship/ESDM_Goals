@@ -5,8 +5,7 @@ class KidsController < ApplicationController
   end
 
   def show
-    @guardian = Guardian.find(params[:guardian_id])
-    @kid = Kid.find_by(guardian_id: @guardian.id)
+    @kid = Kid.find(params[:id])
   end
 
   def new
@@ -15,6 +14,20 @@ class KidsController < ApplicationController
   end
 
   def create
+    @guardian = Guardian.find(params[:guardian_id])
+    @kid = @guardian.kids.new(kid_params)
+
+    if @kid.save
+      redirect_to guardian_path(@guardian)
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+  def kid_params
+    params.require(:kid).permit(:first_name, :last_name, :birthdate, :has_diagnosis, :guardian_id)
   end
 
 end
