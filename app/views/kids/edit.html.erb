@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Kid Profile</title>
+  </head>
+  <body>
+    <h1>Edit Kid Profile</h1>
+    <%= form_for [@guardian, @kid] do |f| %>
+      <p>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </p>
+      <p>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </p>
+      <p>
+        <%= f.label :birthdate %>
+        <%= f.text_field :birthdate %>
+      </p>
+      <p>
+        <%= f.label :has_diagnosis %>
+        <%= f.select :has_diagnosis, [true, false] %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+
+  </body>
+</html>

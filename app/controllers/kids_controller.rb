@@ -18,9 +18,24 @@ class KidsController < ApplicationController
     @kid = @guardian.kids.new(kid_params)
 
     if @kid.save
-      redirect_to guardian_path(@guardian)
+      redirect_to guardian_kid_path(@guardian, @kid)
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @kid = Kid.find(params[:id])
+    @guardian = @kid.guardian
+  end
+
+  def update
+    @kid = Kid.find(params[:id])
+
+    if @kid.update_attributes(kid_params)
+      redirect_to guardian_kid_path(@kid)
+    else
+      render 'edit'
     end
   end
 
