@@ -7,8 +7,7 @@
   <body>
     <% @kids.each do |kid| %>
       <ul>
-        <h3><%= kid.first_name %></h3>
-        <li><%= kid.birthdate %></li>
+        <h3><%= link_to kid.first_name, guardian_kid_path(@guardian, kid) %></h3>
       </ul>
     <% end %>
   </body>
