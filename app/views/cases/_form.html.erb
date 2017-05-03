@@ -1,0 +1,17 @@
+<%= form_for [@guardian, @case] do |f| %>
+  <p>
+    <%= f.label :therapist_id %>
+    <%= f.number_field :therapist_id %>
+  </p>
+  <p>
+    <%= f.label :teacher_id %>
+    <%= f.number_field :teacher_id %>
+  </p>
+  <p>
+    <%= f.label :kid_id %>
+    <%= f.number_field :kid_id %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

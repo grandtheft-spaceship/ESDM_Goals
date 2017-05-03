@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :guardians do
     resources :kids
+    resources :cases
   end
+
 
     # root "controller#view"
   # devise_scope :user do
