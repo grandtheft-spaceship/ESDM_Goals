@@ -5,10 +5,11 @@ class CasesController < ApplicationController
   end
 
   def create
+    @guardian = Guardian.find(params[:guardian_id])
     @case = @guardian.cases.new(case_params)
 
     if @case.save
-      redirect_to guardian_case_path(@case)
+      redirect_to guardian_case_path(@guardian, @case)
     else
       render 'new'
     end

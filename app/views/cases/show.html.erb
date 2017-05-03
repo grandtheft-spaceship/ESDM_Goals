@@ -6,7 +6,13 @@
   </head>
   <body>
     <h1>Case Show Page</h1>
-    <h3>Guardian: <%= @case.guardian.first_name + " " + @case.guardian.last_name %></h3>
-    <h3>Kid: <%= @case.kid.first_name + " " + @case.kid.last_name %></h3>
+      <h3>Guardian: <%= @case.guardian.first_name + " " + @case.guardian.last_name %></h3>
+      <h3>Kid: <%= @case.kid.first_name + " " + @case.kid.last_name %></h3>
+      <% if @case.therapist %>
+        <h3>Therapist: <%= @case.therapist.first_name + " " + @case.therapist.last_name %></h3>
+      <% end %>
+      <% if @case.teacher %>
+        <h3>Teacher: <%= @case.teacher.first_name + " " + @case.teacher.last_name %></h3>
+      <% end %>
   </body>
 </html>
