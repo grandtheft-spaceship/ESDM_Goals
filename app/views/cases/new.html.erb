@@ -6,26 +6,6 @@
   </head>
   <body>
     <h1>New Case</h1>
-      <%= form_for @case do |f| %>
-        <p>
-          <%= f.label :guardian_id %>
-          <%= f.number_field :guardian_id %>
-        </p>
-        <p>
-          <%= f.label :therapist_id %>
-          <%= f.number_field :therapist_id %>
-        </p>
-        <p>
-          <%= f.label :teacher_id %>
-          <%= f.number_field :teacher_id %>
-        </p>
-        <p>
-          <%= f.label :kid_id %>
-          <%= f.number_field :kid_id %>
-        </p>
-        <p>
-          <%= f.submit %>
-        </p>
-      <% end %>
+      <%= render 'form' %>
   </body>
 </html>
