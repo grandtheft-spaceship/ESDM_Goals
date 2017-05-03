@@ -1,4 +1,9 @@
 class CasesController < ApplicationController
+  def index
+    @guardian = Guardian.find(params[:guardian_id])
+    @cases = @guardian.cases.all
+  end
+
   def new
     @guardian = Guardian.find(params[:guardian_id])
     @case = @guardian.cases.new

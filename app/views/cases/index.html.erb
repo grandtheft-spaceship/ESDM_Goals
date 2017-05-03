@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Guardian's Cases</title>
+  </head>
+  <body>
+    <h1>All Guardian's Cases</h1>
+    <h2><% @cases.each do |c| %></h2>
+    <h3><%= link_to c.kid.first_name, guardian_case_path(@guardian, c) %></h3>
+    <% end %>
+  </body>
+</html>
