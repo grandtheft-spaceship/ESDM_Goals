@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :kids
   end
 
+  resources :cases
+
     # root "controller#view"
   # devise_scope :user do
   #   root to: "devise/sessions#new"
