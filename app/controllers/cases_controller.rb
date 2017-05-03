@@ -21,6 +21,7 @@ class CasesController < ApplicationController
   end
 
   def show
+    @guardian = Guardian.find(params[:guardian_id])
     @case = Case.find(params[:id])
   end
 

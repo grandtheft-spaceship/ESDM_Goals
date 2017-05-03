@@ -14,5 +14,15 @@
       <% if @case.teacher %>
         <h3>Teacher: <%= @case.teacher.first_name + " " + @case.teacher.last_name %></h3>
       <% end %>
+      <%= link_to "Daily Reports", guardian_case_daily_reports_path(@guardian, @case) %>
+      <!-- <% if @case.daily_reports %>
+        <% @case.daily_reports.each do |report| %>
+          <p>
+            <%= report.body %>
+            <%= report.guardian.first_name %>
+            <%= report.created_at %>
+          </p>
+        <% end %>
+      <% end %> -->
   </body>
 </html>
