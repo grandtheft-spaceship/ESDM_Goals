@@ -24,6 +24,24 @@ class DailyReportsController < ApplicationController
     end
   end
 
+  def edit
+    @daily_report = DailyReport.find(params[:id])
+    @guardian = @daily_report.guardian
+    @case = @daily_report.case
+  end
+
+  def update
+    @daily_report = DailyReport.find(params[:id])
+    @guardian = @daily_report.guardian
+    @case = @daily_report.case
+
+    if @daily_report.update_attributes(daily_report_params)
+      redirect_to guardian_case_daily_reports_path(@guardian, @case)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def daily_report_params

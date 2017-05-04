@@ -13,6 +13,7 @@
             <%= report.body %>
             <%= report.guardian.first_name %>
             <%= report.created_at %>
+            <%= link_to "Edit", edit_guardian_case_daily_report_path(@guardian, @case, report) %>
           </p>
         </li>
       <% end %>
