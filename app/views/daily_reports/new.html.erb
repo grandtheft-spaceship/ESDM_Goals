@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Daily Report</title>
+  </head>
+  <body>
+    <h1>New Daily Report</h1>
+      <%= form_for [@guardian, @case, @daily_report] do |f| %>
+        <p>
+          <%= f.label :body %>
+          <%= f.text_area :body %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
+      <% end %>
+  </body>
+</html>
